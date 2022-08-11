@@ -5,7 +5,8 @@
     "main": "web.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "banana": "nodemon app.js"
+      "banana": "nodemon app.js",
+      "start": "node index.js"
     },
     "keywords": [
       "example",
