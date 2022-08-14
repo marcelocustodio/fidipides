@@ -86,11 +86,105 @@ let banco = [
         ]
     },
     {
-        'modalides':[
-            {}
+        'modalidades':[
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-masculino', 'nome':'Atletismo Masculino'},
+            {'modalidade':'atletismo-revezamento-misto', 'nome':'Atletismo Revezamento Misto'},
+            {'modalidade':'basquete-feminino', 'nome':'Basquete Feminino'},
+            {'modalidade':'basquete-masculino', 'nome':'Basquete Masculino'},
+            {'modalidade':'beach-tennis-feminino', 'nome':'Beach Tennis Feminino'},
+            {'modalidade':'beach-tennis-masculino', 'nome':'Beach Tennis Masculino'},
+            {'modalidade':'bocha-feminino', 'nome':'Bocha Feminino'},
+            {'modalidade':'bocha-masculino', 'nome':'Bocha Masculino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Boliche Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
         ]
     },
-    {}
+    {
+        'partidas':[
+            {'atleta':'adrianne', 'modalidade':'atletismo-feminino', 'local':'xxxxxxxx', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'atletismo-revezamento-misto', 'local':'xxxxxxxxx', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'samia', 'modalidade':'atletismo-revezamento-misto', 'local':'xxxxxxxxx', 'dia':13, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'jeane', 'modalidade':'bocha-feminino', 'local':'yyyyy', 'dia':13, "hora_inicio":7, "minuto_inicio":30, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'jeane', 'modalidade':'futebol-feminino', 'local':'yyyyy', 'dia':13, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+        ]
+    }
 ]
 
 export default banco
+
+/*
+
+
+
+
+
+
+
+
+
+Boliche Masculino
+Corrida Feminino
+Corrida Masculino
+Dama Feminino
+Dama Masculino
+Dominó Feminino
+Dominó Masculino
+Futebol Society Masculino
+Futevôlei Masculino
+Futevôlei Misto
+Futsal Feminino
+Futsal Masculino
+Natação Feminino
+Natação Masculino
+Natação Revezamento Feminino
+Natação Revezamento Masculino
+Natação Revezamento Misto
+Pebolim
+Pesca Feminino
+Pesca Masculino
+Pôquer
+Sinuca
+Tênis de Campo Feminino
+Tênis de Campo Masculino
+Tênis de Mesa Feminino
+Tênis de Mesa Masculino
+Tiro Esportivo Feminino
+Tiro Esportivo Masculino
+Truco
+Vôlei de Praia Feminino
+Vôlei de Praia Masculino
+Vôlei Indoor Feminino
+Vôlei Indoor Masculino
+Xadrez
+*/
