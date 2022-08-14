@@ -96,47 +96,71 @@ let banco = [
             {'modalidade':'beach-tennis-masculino', 'nome':'Beach Tennis Masculino'},
             {'modalidade':'bocha-feminino', 'nome':'Bocha Feminino'},
             {'modalidade':'bocha-masculino', 'nome':'Bocha Masculino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Boliche Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'boliche-masculino', 'nome':'Boliche Masculino'},
+            {'modalidade':'corrida-feminino', 'nome':'Corrida Feminino'},
+            {'modalidade':'corrida-masculino', 'nome':'Corrida Masculino'},
+            {'modalidade':'dama-feminino', 'nome':'Dama Feminino'},
+            {'modalidade':'dama-masculino', 'nome':'Dama Masculino'},
+            {'modalidade':'domino-feminino', 'nome':'Dominó Feminino'},
+            {'modalidade':'domino-masculino', 'nome':'Dominó Masculino'},
+            {'modalidade':'futebol-society-masculino-livre', 'nome':'Futebol Society Masculino Livre'},
+            {'modalidade':'futebol-society-masculino-master', 'nome':'Futebol Society Masculino Master'},
+            {'modalidade':'futebol-society-masculino-senior', 'nome':'Futebol Society Masculino Sênior'},
+            {'modalidade':'futevolei-misto', 'nome':'Futevôlei Misto'},
+            {'modalidade':'futsal-feminino', 'nome':'Futsal Feminino'},
+            {'modalidade':'futsal-masculino-livre', 'nome':'Futsal Masculino Livre'},
+            {'modalidade':'futsal-masculino-master', 'nome':'Futsal Masculino Master'},
+            {'modalidade':'futsal-masculino-senior', 'nome':'Futsal Masculino Sênior'},
+            {'modalidade':'natacao-feminino', 'nome':'Natação Feminino'},
+            {'modalidade':'natacao-masculino', 'nome':'Natação Masculino'},
+            {'modalidade':'natacao-revezamento-feminino', 'nome':'Natação Revezamento Feminino'},
+            {'modalidade':'natacao-revezamento-masculino', 'nome':'Natação Revezamento Masculino'},
+            {'modalidade':'natacao-revezamento-misto', 'nome':'Natação Revezamento Misto'},
+            {'modalidade':'pebolim', 'nome':'Pebolim'},
+            {'modalidade':'pesca-feminino', 'nome':'Pesca Feminino'},
+            {'modalidade':'pesca-masculino', 'nome':'Pesca Masculino'},
+            {'modalidade':'poquer', 'nome':'Pôquer'},
+            {'modalidade':'sinuca', 'nome':'Sinuca'},
+            {'modalidade':'tenis-de-campo-feminino', 'nome':'Tênis de Campo Feminino'},
+            {'modalidade':'tenis-de-campo-masculino', 'nome':'Tênis de Campo Masculino'},
+            {'modalidade':'tenis-de-mesa-feminino', 'nome':'Tênis de Mesa Feminino'},
+            {'modalidade':'tenis-de-mesa-masculino', 'nome':'Tênis de Mesa Masculino'},
+            {'modalidade':'tiro-esportivo-feminino', 'nome':'Tiro Esportivo Feminino'},
+            {'modalidade':'tiro-esportivo-masculino', 'nome':'Tiro Esportivo Masculino'},
+            {'modalidade':'truco', 'nome':'Truco'},
+            {'modalidade':'volei-de-praia-feminino', 'nome':'Vôlei de Praia Feminino'},
+            {'modalidade':'volei-de-praia-masculino', 'nome':'Vôlei de Praia Masculino'},
+            {'modalidade':'volei-indoor-feminino', 'nome':'Vôlei Indoor Feminino'},
+            {'modalidade':'volei-indoor-feminino', 'nome':'Vôlei Indoor Feminino'},
+            {'modalidade':'volei-indoor-masculino', 'nome':'Vôlei Indoor Masculino'},
+            {'modalidade':'xadrez', 'nome':'Xadrez'},
         ]
     },
     {
         'partidas':[
-            {'atleta':'adrianne', 'modalidade':'atletismo-feminino', 'local':'xxxxxxxx', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
-            {'atleta':'adrianne', 'modalidade':'atletismo-revezamento-misto', 'local':'xxxxxxxxx', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
-            {'atleta':'samia', 'modalidade':'atletismo-revezamento-misto', 'local':'xxxxxxxxx', 'dia':13, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
-            {'atleta':'jeane', 'modalidade':'bocha-feminino', 'local':'yyyyy', 'dia':13, "hora_inicio":7, "minuto_inicio":30, "hora_fim":10, "minuto_fim":0},
-            {'atleta':'jeane', 'modalidade':'futebol-feminino', 'local':'yyyyy', 'dia':13, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'atletismo-feminino', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'atletismo-revezamento-misto', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'tenis-de-mesa-feminino', 'local':'Praiamar Natal Hotel & Convention', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'natacao-revezamento-feminino', 'local':'APCEF', 'dia':26, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'futsal-feminino', 'local':'UFRN', 'dia':24, "hora_inicio":10, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'futsal-feminino', 'local':'UFRN', 'dia':25, "hora_inicio":10, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'natacao-feminino', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'basquete-feminino', 'local':'SESI', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'basquete-feminino', 'local':'SESI', 'dia':25, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+
+
+            {'atleta':'alessandra', 'modalidade':'natacao-feminino', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alessandra', 'modalidade':'natacao-revezamento-misto', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alessandra', 'modalidade':'natacao-feminino', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alessandra', 'modalidade':'natacao-revezamento-misto', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alessandra', 'modalidade':'volei-de-praia-feminino', 'local':'Aeroclube', 'dia':24, "hora_inicio":9, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'alessandra', 'modalidade':'truco', 'local':'Praiamar Natal Hotel & Convention', 'dia':23, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
+
+
+            {'atleta':'alessandro', 'modalidade':'futsal-masculino-master', 'local':'UFRN', 'dia':23, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
+            {'atleta':'alessandro', 'modalidade':'futsal-masculino-master', 'local':'Sagrada Família', 'dia':24, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
+            {'atleta':'alessandro', 'modalidade':'futsal-masculino-master', 'local':'Sagrada Família', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
+            
         ]
     }
 ]
@@ -146,45 +170,4 @@ export default banco
 /*
 
 
-
-
-
-
-
-
-
-Boliche Masculino
-Corrida Feminino
-Corrida Masculino
-Dama Feminino
-Dama Masculino
-Dominó Feminino
-Dominó Masculino
-Futebol Society Masculino
-Futevôlei Masculino
-Futevôlei Misto
-Futsal Feminino
-Futsal Masculino
-Natação Feminino
-Natação Masculino
-Natação Revezamento Feminino
-Natação Revezamento Masculino
-Natação Revezamento Misto
-Pebolim
-Pesca Feminino
-Pesca Masculino
-Pôquer
-Sinuca
-Tênis de Campo Feminino
-Tênis de Campo Masculino
-Tênis de Mesa Feminino
-Tênis de Mesa Masculino
-Tiro Esportivo Feminino
-Tiro Esportivo Masculino
-Truco
-Vôlei de Praia Feminino
-Vôlei de Praia Masculino
-Vôlei Indoor Feminino
-Vôlei Indoor Masculino
-Xadrez
 */
