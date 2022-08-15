@@ -90,11 +90,12 @@ let banco = [
             {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
             {'modalidade':'atletismo-masculino-livre-400m', 'nome':'Atletismo Masculino Livre 400m'},
             {'modalidade':'atletismo-masculino-livre-100m', 'nome':'Atletismo Masculino Livre 100m'},
-            {'modalidade':'atletismo-revezamento-misto-livre', 'nome':'Atletismo Revezamento Misto Livre'},
+            {'modalidade':'atletismo-revezamento-misto-livre-4x100', 'nome':'Atletismo Revezamento Misto Livre 4x100m'},
             {'modalidade':'basquete-feminino', 'nome':'Basquete Feminino'},
             {'modalidade':'basquete-masculino', 'nome':'Basquete Masculino'},
             {'modalidade':'beach-tennis-feminino', 'nome':'Beach Tennis Feminino'},
-            {'modalidade':'beach-tennis-masculino', 'nome':'Beach Tennis Masculino'},
+            {'modalidade':'beach-tennis-masculino-livre-dupla', 'nome':'Beach Tennis Masculino Livre Dupla'},
+            {'modalidade':'beach-tennis-masculino-livre-simples', 'nome':'Beach Tennis Masculino Livre Simples'},
             {'modalidade':'bocha-feminino', 'nome':'Bocha Feminino'},
             {'modalidade':'bocha-masculino', 'nome':'Bocha Masculino'},
             {'modalidade':'boliche-masculino', 'nome':'Boliche Masculino'},
@@ -114,7 +115,8 @@ let banco = [
             {'modalidade':'futsal-masculino-livre', 'nome':'Futsal Masculino Livre'},
             {'modalidade':'futsal-masculino-master', 'nome':'Futsal Masculino Master'},
             {'modalidade':'futsal-masculino-senior', 'nome':'Futsal Masculino Sênior'},
-            {'modalidade':'natacao-feminino-livre', 'nome':'Natação Feminino Livre'},
+            {'modalidade':'natacao-feminino-livre-crawl', 'nome':'Natação Feminino Livre Crawl'},
+            {'modalidade':'natacao-feminino-livre-borboleta', 'nome':'Natação Feminino Livre Borboleta'},
             {'modalidade':'natacao-feminino-master', 'nome':'Natação Feminino Master'},
             {'modalidade':'natacao-masculino', 'nome':'Natação Masculino'},
             {'modalidade':'natacao-revezamento-feminino', 'nome':'Natação Revezamento Feminino'},
@@ -122,7 +124,8 @@ let banco = [
             {'modalidade':'natacao-revezamento-masculino', 'nome':'Natação Revezamento Masculino'},
             {'modalidade':'natacao-revezamento-misto-livre', 'nome':'Natação Revezamento Misto Livre'},
             {'modalidade':'natacao-revezamento-misto-master', 'nome':'Natação Revezamento Misto Master'},
-            {'modalidade':'pebolim', 'nome':'Pebolim'},
+            {'modalidade':'pebolim-dupla', 'nome':'Pebolim Dupla'},
+            {'modalidade':'pebolim-simples', 'nome':'Pebolim Simples'},
             {'modalidade':'pesca-feminino', 'nome':'Pesca Feminino'},
             {'modalidade':'pesca-masculino', 'nome':'Pesca Masculino'},
             {'modalidade':'poquer', 'nome':'Pôquer'},
@@ -147,11 +150,11 @@ let banco = [
             {'atleta':'adrianne', 'modalidade':'atletismo-feminino', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'atletismo-revezamento-misto-livre', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'tenis-de-mesa-feminino', 'local':'Praiamar Natal Hotel & Convention', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
-            {'atleta':'adrianne', 'modalidade':'natacao-revezamento-feminino', 'local':'APCEF', 'dia':26, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'natacao-revezamento-feminino-livre', 'local':'APCEF', 'dia':26, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'futsal-feminino', 'local':'UFRN', 'dia':24, "hora_inicio":10, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'futsal-feminino', 'local':'UFRN', 'dia':25, "hora_inicio":10, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
-            {'atleta':'adrianne', 'modalidade':'natacao-feminino-livre', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
-            {'atleta':'adrianne', 'modalidade':'natacao-feminino-livre', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'natacao-feminino-livre-crawl', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'natacao-feminino-livre-borboleta', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'basquete-feminino', 'local':'SESI', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'basquete-feminino', 'local':'SESI', 'dia':25, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
 
@@ -181,16 +184,37 @@ let banco = [
             {'atleta':'alessandro', 'modalidade':'futevolei-masculino-livre', 'local':'APCEF', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
 
 
-            {'atleta':'alex', 'modalidade':'atletismo-revezamento-misto-livre', 'local':'APCEF', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
-            {'atleta':'alex', 'modalidade':'corrida-masculino-livre-5km', 'local':'APCEF', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
-            {'atleta':'alex', 'modalidade':'volei-de-praia-masculino-livre', 'local':'APCEF', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
-            {'atleta':'alex', 'modalidade':'atletismo-masculino-livre-400m', 'local':'APCEF', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'alex', 'modalidade':'atletismo-revezamento-misto-livre-4x100', 'local':'APCEF', 'dia':23, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alex', 'modalidade':'corrida-masculino-livre-5km', 'local':'APCEF', 'dia':23, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alex', 'modalidade':'volei-de-praia-masculino-livre', 'local':'Aeroclube', 'dia':24, "hora_inicio":15, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
+            {'atleta':'alex', 'modalidade':'atletismo-masculino-livre-400m', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
             {'atleta':'alex', 'modalidade':'basquete-masculino', 'local':'SESI', 'dia':24, "hora_inicio":16, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
             {'atleta':'alex', 'modalidade':'basquete-masculino', 'local':'SESI', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
-            {'atleta':'alex', 'modalidade':'volei-indoor-masculino', 'local':'SESI', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
-            {'atleta':'alex', 'modalidade':'atletismo-masculino-livre-100m', 'local':'SESI', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
-            
+            {'atleta':'alex', 'modalidade':'volei-indoor-masculino', 'local':'Palácio dos Esportes', 'dia':24, "hora_inicio":10, "minuto_inicio":30, "hora_fim":12, "minuto_fim":30},
+            {'atleta':'alex', 'modalidade':'volei-indoor-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":9, "minuto_inicio":15, "hora_fim":11, "minuto_fim":15},
+            {'atleta':'alex', 'modalidade':'atletismo-masculino-livre-100m', 'local':'SESI', 'dia':23, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
 
+            {'atleta':'allyson', 'modalidade':'beach-tennis-masculino-livre-dupla', 'local':'Aeroclube', 'dia':23, "hora_inicio":13, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'beach-tennis-masculino-livre-simples', 'local':'Aeroclube', 'dia':23, "hora_inicio":13, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'futsal-masculino-livre', 'local':'Sagrada Família', 'dia':24, "hora_inicio":9, "minuto_inicio":0, "hora_fim":11, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'futsal-masculino-livre', 'local':'UFRN', 'dia':25, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'boliche-masculino', 'local':'Pastelouco', 'dia':24, "hora_inicio":9, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'basquete-masculino', 'local':'SESI', 'dia':24, "hora_inicio":16, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'basquete-masculino', 'local':'SESI', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":16, "minuto_fim":0},
+            {'atleta':'allyson', 'modalidade':'pebolim-dupla', 'local':'Praiamar Natal Hotel & Convention', 'dia':23, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
+
+
+            {'atleta':'anaisabela', 'modalidade':'domino-feminino', 'local':'Praiamar Natal Hotel & Convention', 'dia':23, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
+
+
+            /*
+            Dominó Feminino
+Vôlei de Praia Feminino | Master
+Vôlei de Praia Feminino | Livre
+Basquete Feminino
+Vôlei Indoor Feminino
+
+            */
         ]
     }
 ]

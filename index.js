@@ -17,11 +17,22 @@ console.log(hoje)
 
 let resgatarCompeticoesDeHoje = (hoje) => {
   let competicoes = []
+  let competicoesEAtletas = []
   banco[2]['partidas'].forEach( (element, index) => {
     if (element['dia'] === hoje) {
-      competicoes.push({'indice':index,'modalidade':element['modalidade'],"hora_inicio":element['hora_inicio'],"minuto_inicio":element['minuto_inicio'],'local':element['local']})
+      competicoes.push(
+        {'indice':index,
+        'modalidade':element['modalidade'],
+        "hora_inicio":element['hora_inicio'],
+        "minuto_inicio":element['minuto_inicio'],
+        'local':element['local']//,
+        //'atleta':element['atleta']
+        }
+      )
+      competicoesEAtletas.push([element['modalidade'], element['atleta']])
     }
   });
+
   let stringCompeticoes = ''
   if (competicoes != null) {
     competicoes.sort(
@@ -37,9 +48,19 @@ let resgatarCompeticoesDeHoje = (hoje) => {
     );
     competicoes.forEach(
       (element) => {
+        let atletasNasCompeticoes = ''
+        competicoesEAtletas.forEach(
+          (e) => {
+            if (e[0] === element['modalidade']) { 
+              if (atletasNasCompeticoes != '') atletasNasCompeticoes += ', '
+              atletasNasCompeticoes += e[1]
+            }
+          }
+        )
         stringCompeticoes += (element['hora_inicio']<10 ? '0'+element['hora_inicio'] : element['hora_inicio']) + 'h' + 
                              (element['minuto_inicio']<10 ? '0'+element['minuto_inicio'] : element['minuto_inicio']) + ': ' + 
-                              resgatarNomeModalidade(element['modalidade']) + ' (' + element['local'] + ')<br>'
+                             '<b>' + resgatarNomeModalidade(element['modalidade']) + '</b> (' + element['local'] + ') - <i>' +
+                              atletasNasCompeticoes + '</i><br>'
       }
     )
   } else stringCompeticoes = 'Sem competições hoje.'
@@ -54,6 +75,7 @@ app.get('/', function (req, res) {
     'FIDIPIDES : Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br>' +
     'Abertura OTC 2022: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: *Natal Convention Center*<br>' +
     '<a href="atletas">Lista de Atletas</a><br>' +
+    'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
     'Selecionar o dia: ' +
     'Selecionar a modalidade: ' +
     'botão FILTRAR<br>' +
@@ -82,9 +104,12 @@ let resgatarNomeModalidade = (id) => {
 }
 
 let resgatarModalidadesDoAtleta = (id) => {
+
   
+  console.log(id)
   var arrayModalidades = []
   banco[2]['partidas'].forEach( (element, index) => {
+    
     if (element['atleta'] === id) {
       if (!arrayModalidades.includes(element['modalidade'])) arrayModalidades.push(element['modalidade'])
     }
@@ -159,10 +184,10 @@ app.get('/atleta/:nome', function (req, res) {
   });
   let modalidades = resgatarModalidadesDoAtleta(req.params.nome)
   let participacoesHoje = resgatarParticipacoesHoje(req.params.nome)
-  let participacoesTotais = ''
+  //let participacoesTotais = ''
   res.send(
     'Passado: ' + req.params.nome + '<br>' +
-    'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br>' +
+    'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<select><option value="23">23/08</option></select><br>' +
     'Participações HOJE (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
