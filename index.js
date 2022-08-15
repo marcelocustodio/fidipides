@@ -10,15 +10,19 @@ let app = express();
 const date = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"})
 let hoje = date[0] + '' + date[1]
 console.log(date)
-hoje = 23
+//hoje = 23
 console.log(hoje)
+
+
+
+
 
 let resgatarCompeticoesDeHoje = (hoje) => {
   let competicoes = []
   banco[2]['partidas'].forEach( (element, index) => {
     if (element['dia'] === hoje) {
       // competicoes += element['modalidade'] + ' em ' + element['local'] + ' às ' + element['hora_inicio']
-      competicoes.push({'indice':index,'modalidade':element['modalidade'],"hora_inicio":element['hora_inicio'],"minuto_inicio":element['minuto_inicio']})
+      competicoes.push({'indice':index,'modalidade':element['modalidade'],"hora_inicio":element['hora_inicio'],"minuto_inicio":element['minuto_inicio'],'local':element['local']})
     }
   });
   let stringCompeticoes = ''
@@ -36,12 +40,16 @@ let resgatarCompeticoesDeHoje = (hoje) => {
     );
     competicoes.forEach(
       (element) => {
-        stringCompeticoes += element['modalidade'] + ' às ' + element['hora_inicio'] + 'h' + element['minuto_inicio']
+        stringCompeticoes += (element['hora_inicio']<10 ? '0'+element['hora_inicio'] : element['hora_inicio']) + 'h' + 
+                             (element['minuto_inicio']<10 ? '0'+element['minuto_inicio'] : element['minuto_inicio']) + ': ' + 
+                              resgatarNomeModalidade(element['modalidade']) + ' (' + element['local'] + ')<br>'
       }
     )
-  }
+  } else stringCompeticoes = 'Sem competições hoje.'
   return stringCompeticoes
 }
+
+
 
 app.get('/', function (req, res) {
   let competicoesHoje = resgatarCompeticoesDeHoje(hoje)
