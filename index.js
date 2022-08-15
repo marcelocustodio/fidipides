@@ -10,10 +10,8 @@ let app = express();
 const date = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"})
 let hoje = date[0] + '' + date[1]
 console.log(date)
-//hoje = 23
+hoje = 25
 console.log(hoje)
-
-
 
 
 
@@ -21,7 +19,6 @@ let resgatarCompeticoesDeHoje = (hoje) => {
   let competicoes = []
   banco[2]['partidas'].forEach( (element, index) => {
     if (element['dia'] === hoje) {
-      // competicoes += element['modalidade'] + ' em ' + element['local'] + ' às ' + element['hora_inicio']
       competicoes.push({'indice':index,'modalidade':element['modalidade'],"hora_inicio":element['hora_inicio'],"minuto_inicio":element['minuto_inicio'],'local':element['local']})
     }
   });
@@ -60,7 +57,7 @@ app.get('/', function (req, res) {
     'Selecionar o dia: ' +
     'Selecionar a modalidade: ' +
     'botão FILTRAR<br>' +
-    'Competições hoje (' + hoje + '/08):<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
+    'Competições da delegação do AM hoje (' + hoje + '/08):<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
   );
 })
 
@@ -142,8 +139,7 @@ let resgatarParticipacoesHoje = (id) => {
     array_participacoes.forEach(
       (element) => {
         if (participacoes != '') participacoes += '<br>'
-        participacoes += element['dia'] + ' asdfasdàs ' + 
-                          (element['hora_inicio']<10 ? '0'+element['hora_inicio'] : element['hora_inicio']) + 'h' + 
+        participacoes +=  (element['hora_inicio']<10 ? '0'+element['hora_inicio'] : element['hora_inicio']) + 'h' + 
                           (element['minuto_inicio']<10 ? '0'+element['minuto_inicio'] : element['minuto_inicio']) + ': ' + 
                           resgatarNomeModalidade(element['modalidade']) + ' (' + element['local'] + ')'
       }
@@ -168,8 +164,9 @@ app.get('/atleta/:nome', function (req, res) {
     'Passado: ' + req.params.nome + '<br>' +
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
-    'Participações HOJE (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' +
-    'Participações TOTAIS: ' + participacoesTotais + '<br>'
+    'Selecionar dia<select><option value="23">23/08</option></select><br>' +
+    'Participações HOJE (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
+    //'Participações TOTAIS: ' + participacoesTotais + '<br>'
   );
 })
 
