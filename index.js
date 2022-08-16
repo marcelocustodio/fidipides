@@ -4,31 +4,59 @@ import express from 'express';
 import banco from './banco.js'
 // let banco = require ('./banco.js')
 
+import bodyParser from 'body-parser'
+
 let app = express();
+//const express = require("express");
+//const bodyParser = require("body-parser");
+const router = express.Router();
+//const app = express();
+
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+/*
+router.post('/handle',(request,response) => {
+  //code to perform particular action.
+  //To access POST variable use req.body()methods.
+  console.log(request.body);
+});*/
+
+// add router in the Express app.
+app.use("/", router);
+
+
+
+
 
 
 const date = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"})
 let hoje = date[0] + '' + date[1]
 console.log(date)
-hoje = 25
+//hoje = 25
 console.log(hoje)
 
 
 
-let resgatarCompeticoesDeHoje = (hoje) => {
+let resgatarCompeticoesDeHoje = (dia) => {
   let competicoes = []
   let competicoesEAtletas = []
+  let contadorDeCompeticoes = []
   banco[2]['partidas'].forEach( (element, index) => {
-    if (element['dia'] === hoje) {
-      competicoes.push(
-        {'indice':index,
-        'modalidade':element['modalidade'],
-        "hora_inicio":element['hora_inicio'],
-        "minuto_inicio":element['minuto_inicio'],
-        'local':element['local']//,
-        //'atleta':element['atleta']
-        }
-      )
+    
+    if (element['dia'] === dia) {
+      if (!contadorDeCompeticoes.includes(element['modalidade'])) {
+        contadorDeCompeticoes.push(element['modalidade'])
+        competicoes.push(
+          {'indice':index,
+          'modalidade':element['modalidade'],
+          "hora_inicio":element['hora_inicio'],
+          "minuto_inicio":element['minuto_inicio'],
+          'local':element['local']
+          }
+        )
+      }
       competicoesEAtletas.push([element['modalidade'], element['atleta']])
     }
   });
@@ -68,18 +96,36 @@ let resgatarCompeticoesDeHoje = (hoje) => {
 }
 
 
+router.post('/', function (req, res) {
+  console.log(req.body.diafiltro)
+  let competicoesHoje = resgatarCompeticoesDeHoje(parseInt(req.body.diafiltro))
+   res.send(
+    'FIDIPIDES : Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br>' +
+    'OTC 2022<br>' +
+    'Abertura: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: *Natal Convention Center*<br>' +
+    '<a href="atletas">Lista de Atletas e suas Participações</a><br>' +
+    'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
+    '<form action="/" method="POST">Selecionar o dia: ' +
+    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    'Selecionar a modalidade: ' +
+    '<input type="submit">botão FILTRAR<br></input></form>' +
+    'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
+  );
+})
 
 app.get('/', function (req, res) {
   let competicoesHoje = resgatarCompeticoesDeHoje(hoje)
    res.send(
     'FIDIPIDES : Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br>' +
-    'Abertura OTC 2022: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: *Natal Convention Center*<br>' +
-    '<a href="atletas">Lista de Atletas</a><br>' +
+    'OTC 2022<br>' +
+    'Abertura: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: *Natal Convention Center*<br>' +
+    '<a href="atletas">Lista de Atletas e suas Participações</a><br>' +
     'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
-    'Selecionar o dia: ' +
+    '<form action="/" method="POST">Selecionar o dia: ' +
+    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
     'Selecionar a modalidade: ' +
-    'botão FILTRAR<br>' +
-    'Competições da delegação do AM hoje (' + hoje + '/08):<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
+    '<input type="submit" value="filtrar"/></form>' +
+    'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
   );
 })
 
@@ -126,11 +172,11 @@ let resgatarModalidadesDoAtleta = (id) => {
   return modalidades
 }
 
-let resgatarParticipacoesHoje = (id) => {
+let resgatarParticipacoesNumDia = (id, dia) => {
   let array_participacoes = []
 
   banco[2]['partidas'].forEach( (element, index) => {
-    if (element['atleta'] === id && element['dia'] === hoje) {
+    if (element['atleta'] === id && element['dia'] === dia) {
 
       array_participacoes.push(
         {
@@ -169,10 +215,37 @@ let resgatarParticipacoesHoje = (id) => {
                           resgatarNomeModalidade(element['modalidade']) + ' (' + element['local'] + ')'
       }
     )
-  } else participacoes = 'Não há participações hoje'
+  } else participacoes = 'Não há participações'
 
   return participacoes
 }
+
+router.post('/atleta/:nome', function (req, res) {
+  console.log(req.body.diafiltro)
+  console.log(req.body.nome)
+
+  var chave = 9
+  banco[0]['atletas'].forEach( (element, index) => {
+    if (element['nome'] === req.params.nome) {
+      console.log('Nome completo do cidadão: ' + element['nome_completo'])
+      chave = index
+    }
+  });
+  let modalidades = resgatarModalidadesDoAtleta(req.params.nome)
+  let participacoesNoDia = resgatarParticipacoesNumDia(req.params.nome, parseInt(req.body.diafiltro))
+  //let participacoesTotais = ''
+  res.send(
+    'Passado do POST: ' + req.body.nome + '<br>' +
+    'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
+    'Modalidades:<br>' + modalidades + '<br><br>' +
+    'Selecionar dia<form action="/atleta/' + req.body.nome + '" method="POST">' +
+    '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    '<input type="hidden" name="nome" value="' + req.body.nome + '"/>' +
+    '<input type="submit" value="filtrar" /></form><br>' +
+    'Participações no dia ' + req.body.diafiltro + '/08:<br> ' + participacoesNoDia + '<br>' //+
+    //'Participações TOTAIS: ' + participacoesTotais + '<br>'
+  );
+})
 
 app.get('/atleta/:nome', function (req, res) {
   var chave = 9
@@ -183,13 +256,16 @@ app.get('/atleta/:nome', function (req, res) {
     }
   });
   let modalidades = resgatarModalidadesDoAtleta(req.params.nome)
-  let participacoesHoje = resgatarParticipacoesHoje(req.params.nome)
+  let participacoesHoje = resgatarParticipacoesNumDia(req.params.nome, hoje)
   //let participacoesTotais = ''
   res.send(
     'Passado: ' + req.params.nome + '<br>' +
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
-    'Selecionar dia<select><option value="23">23/08</option></select><br>' +
+    'Selecionar dia<form action="/atleta/' + req.params.nome + '" method="POST">' +
+    '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    '<input type="hidden" name="nome" value="' + req.params.nome + '"/>' +
+    '<input type="submit" value="filtrar" /></form><br>' +
     'Participações HOJE (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
     //'Participações TOTAIS: ' + participacoesTotais + '<br>'
   );

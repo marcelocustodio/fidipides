@@ -11,7 +11,7 @@ let banco = [
             {'nome':'andreza', 'nome_completo':'Andreza Cabral Marques do Nascimento', 'sexo':'f'},
             {'nome':'andrezza', 'nome_completo':'Andrezza Pereira Machado Braga', 'sexo':'f'},
             {'nome':'armando', 'nome_completo':'Armando Jorge Serrão Fróes', 'sexo':'m'},
-            {'nome':'carlospereira', 'nome_completo':'Carlos Andrey Holanda Pereira', 'sexo':'m'},
+            {'nome':'andrey', 'nome_completo':'Carlos Andrey Holanda Pereira', 'sexo':'m'},
             {'nome':'carlosmuller', 'nome_completo':'Carlos Augusto Lins Muller', 'sexo':'m'},
             {'nome':'caroline', 'nome_completo':'Caroline Cunha de Oliveira Athayde', 'sexo':'f'},
             {'nome':'cristiane', 'nome_completo':'Cristiane Cunha e Silva de Aguiar', 'sexo':'f'},
@@ -87,10 +87,11 @@ let banco = [
     },
     {
         'modalidades':[
-            {'modalidade':'atletismo-feminino', 'nome':'Atletismo Feminino'},
+            {'modalidade':'atletismo-feminino-livre-100m', 'nome':'Atletismo Feminino Livre 100m'},
+            {'modalidade':'atletismo-feminino-livre-400m', 'nome':'Atletismo Feminino Livre 400m'},
             {'modalidade':'atletismo-masculino-livre-400m', 'nome':'Atletismo Masculino Livre 400m'},
             {'modalidade':'atletismo-masculino-livre-100m', 'nome':'Atletismo Masculino Livre 100m'},
-            {'modalidade':'atletismo-revezamento-misto-livre-4x100', 'nome':'Atletismo Revezamento Misto Livre 4x100m'},
+            {'modalidade':'atletismo-revezamento-misto-livre-4x100m', 'nome':'Atletismo Revezamento Misto Livre 4x100m'},
             {'modalidade':'basquete-feminino', 'nome':'Basquete Feminino'},
             {'modalidade':'basquete-masculino', 'nome':'Basquete Masculino'},
             {'modalidade':'beach-tennis-feminino', 'nome':'Beach Tennis Feminino'},
@@ -137,7 +138,7 @@ let banco = [
             {'modalidade':'tiro-esportivo-feminino', 'nome':'Tiro Esportivo Feminino'},
             {'modalidade':'tiro-esportivo-masculino', 'nome':'Tiro Esportivo Masculino'},
             {'modalidade':'truco', 'nome':'Truco'},
-            {'modalidade':'volei-de-praia-feminino', 'nome':'Vôlei de Praia Feminino'},
+            {'modalidade':'volei-de-praia-feminino-master', 'nome':'Vôlei de Praia Feminino Master'},
             {'modalidade':'volei-de-praia-masculino-livre', 'nome':'Vôlei de Praia Masculino Livre'},
             {'modalidade':'volei-indoor-feminino', 'nome':'Vôlei Indoor Feminino'},
             {'modalidade':'volei-indoor-feminino', 'nome':'Vôlei Indoor Feminino'},
@@ -147,8 +148,9 @@ let banco = [
     },
     {
         'partidas':[
-            {'atleta':'adrianne', 'modalidade':'atletismo-feminino', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
-            {'atleta':'adrianne', 'modalidade':'atletismo-revezamento-misto-livre', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'atletismo-feminino-livre-100m', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'atletismo-feminino-livre-400m', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'adrianne', 'modalidade':'atletismo-revezamento-misto-livre-4x100m', 'local':'UFRN', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'tenis-de-mesa-feminino', 'local':'Praiamar Natal Hotel & Convention', 'dia':25, "hora_inicio":14, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'natacao-revezamento-feminino-livre', 'local':'APCEF', 'dia':26, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'adrianne', 'modalidade':'futsal-feminino', 'local':'UFRN', 'dia':24, "hora_inicio":10, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
@@ -163,7 +165,7 @@ let banco = [
             {'atleta':'alessandra', 'modalidade':'natacao-revezamento-misto-livre', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'alessandra', 'modalidade':'natacao-revezamento-feminino-livre', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'alessandra', 'modalidade':'natacao-revezamento-misto-master', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
-            {'atleta':'alessandra', 'modalidade':'volei-de-praia-feminino', 'local':'Aeroclube', 'dia':24, "hora_inicio":9, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'alessandra', 'modalidade':'volei-de-praia-feminino-master', 'local':'Aeroclube', 'dia':24, "hora_inicio":7, "minuto_inicio":30, "hora_fim":12, "minuto_fim":0},
             {'atleta':'alessandra', 'modalidade':'truco', 'local':'Praiamar Natal Hotel & Convention', 'dia':23, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
 
 
@@ -184,7 +186,7 @@ let banco = [
             {'atleta':'alessandro', 'modalidade':'futevolei-masculino-livre', 'local':'APCEF', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
 
 
-            {'atleta':'alex', 'modalidade':'atletismo-revezamento-misto-livre-4x100', 'local':'APCEF', 'dia':23, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'alex', 'modalidade':'atletismo-revezamento-misto-livre-4x100m', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'alex', 'modalidade':'corrida-masculino-livre-5km', 'local':'APCEF', 'dia':23, "hora_inicio":7, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
             {'atleta':'alex', 'modalidade':'volei-de-praia-masculino-livre', 'local':'Aeroclube', 'dia':24, "hora_inicio":15, "minuto_inicio":0, "hora_fim":18, "minuto_fim":0},
             {'atleta':'alex', 'modalidade':'atletismo-masculino-livre-400m', 'local':'APCEF', 'dia':25, "hora_inicio":7, "minuto_inicio":0, "hora_fim":12, "minuto_fim":0},
@@ -204,17 +206,131 @@ let banco = [
             {'atleta':'allyson', 'modalidade':'pebolim-dupla', 'local':'Praiamar Natal Hotel & Convention', 'dia':23, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
 
 
-            {'atleta':'anaisabela', 'modalidade':'domino-feminino', 'local':'Praiamar Natal Hotel & Convention', 'dia':23, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
+            {'atleta':'anaisabela', 'modalidade':'domino-feminino', 'local':'Praiamar Natal Hotel & Convention', 'dia':25, "hora_inicio":18, "minuto_inicio":0, "hora_fim":23, "minuto_fim":0},
+            {'atleta':'anaisabela', 'modalidade':'volei-de-praia-feminino-master', 'local':'Aeroclube', 'dia':24, "hora_inicio":7, "minuto_inicio":30, "hora_fim":12, "minuto_fim":0},
+            {'atleta':'anaisabela', 'modalidade':'volei-de-praia-feminino-livre', 'local':'Aeroclube', 'dia':24, "hora_inicio":9, "minuto_inicio":0, "hora_fim":11, "minuto_fim":0},
+            {'atleta':'anaisabela', 'modalidade':'basquete-feminino', 'local':'SESI', 'dia':23, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'anaisabela', 'modalidade':'basquete-feminino', 'local':'SESI', 'dia':25, "hora_inicio":8, "minuto_inicio":0, "hora_fim":10, "minuto_fim":0},
+            {'atleta':'anaisabela', 'modalidade':'volei-indoor-feminino', 'local':'Palácio dos Esportes', 'dia':24, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'anaisabela', 'modalidade':'volei-indoor-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+// PAREI AQUI
+
+            {'atleta':'analuiza', 'modalidade':'beach-tennis-feminino-livre-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'analuiza', 'modalidade':'beach-tennis-feminino-livre-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'analuiza', 'modalidade':'tenis-de-campo-feminino-livre-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'analuiza', 'modalidade':'tenis-de-campo-feminino-livre-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'analuiza', 'modalidade':'bocha-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'andreza', 'modalidade':'dama-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andreza', 'modalidade':'futsal-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andreza', 'modalidade':'pebolim-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andreza', 'modalidade':'basquete-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andreza', 'modalidade':'bocha-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'andrezza', 'modalidade':'natacao-revezamento-feminino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrezza', 'modalidade':'corrida-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrezza', 'modalidade':'futsal-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'armando', 'modalidade':'futsal-masculino-senior', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'armando', 'modalidade':'domino-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'armando', 'modalidade':'futebol-society-masculino-senior', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'andrey', 'modalidade':'natacao-masculino-master-crawl', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'natacao-masculino-master-peito', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'natacao-masculino-livre-peito', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'natacao-revezamento-misto-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'futebol-society-masculino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},            
+            {'atleta':'andrey', 'modalidade':'domino-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'natacao-revezamento-misto-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'natacao-masculino-master-borboleta', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'andrey', 'modalidade':'natacao-revezamento-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'carlosmuller', 'modalidade':'futsal-masculino-senior', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'carlosmuller', 'modalidade':'corrida-masculino-best-senior-10km', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'carlosmuller', 'modalidade':'bocha-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'carlosmuller', 'modalidade':'futebol-society-masculino-senior', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'caroline', 'modalidade':'natacao-revezamento-misto-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'caroline', 'modalidade':'volei-de-praia-feminino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'caroline', 'modalidade':'natacao-revezamento-feminino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'caroline', 'modalidade':'natacao-feminino-livre-crawl', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'caroline', 'modalidade':'truco', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'caroline', 'modalidade':'volei-indoor-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'cristiane', 'modalidade':'beach-tennis-feminino-master-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'cristiane', 'modalidade':'beach-tennis-feminino-master-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'cristiane', 'modalidade':'beach-tennis-feminino-senior-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'cristiane', 'modalidade':'volei-de-praia-feminino-senior', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'cristiane', 'modalidade':'volei-indoor-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'cristiane', 'modalidade':'volei-de-praia-feminino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            
+            
+            {'atleta':'daniel', 'modalidade':'dama-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'daniel', 'modalidade':'tenis-de-mesa-masculino-master-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'daniel', 'modalidade':'tenis-de-mesa-masculino-livre-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'daniel', 'modalidade':'tenis-de-mesa-masculino-livre-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'daniel', 'modalidade':'tenis-de-mesa-masculino-master-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'daniel', 'modalidade':'xadrez', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+        
+            {'atleta':'darlison', 'modalidade':'futsal-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'darlison', 'modalidade':'futebol-society-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'debora', 'modalidade':'futsal-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'debora', 'modalidade':'pebolim-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'debora', 'modalidade':'basquete-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'debora', 'modalidade':'corrida-feminino-livre-5km', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'diego', 'modalidade':'dama-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'diego', 'modalidade':'xadrez', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'diego', 'modalidade':'futsal-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'diego', 'modalidade':'futebol-society-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+            {'atleta':'diego', 'modalidade':'futevolei-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15, "hora_fim":16, "minuto_fim":15},
+
+            {'atleta':'douglas', 'modalidade':'tenis-de-campo-masculino-livre-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'natacao-masculino-livre-costas', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'natacao-masculino-livre-peito', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'natacao-revezamento-misto-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'natacao-masculino-livre-borboleta', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'natacao-masculino-livre-crawl', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'volei-de-praia-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'basquete-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'douglas', 'modalidade':'volei-indoor-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15}, 
+            {'atleta':'douglas', 'modalidade':'natacao-revezamento-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+
+            {'atleta':'edisley', 'modalidade':'beach-tennis-masculino-livre-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'beach-tennis-masculino-master-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'tenis-de-campo-masculino-livre-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'tenis-de-campo-masculino-master-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'tenis-de-campo-masculino-master-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'futsal-masculino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'tenis-de-campo-masculino-livre-dupla', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'volei-de-praia-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'volei-de-praia-masculino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'futsal-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'futebol-society-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'futebol-society-masculino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edisley', 'modalidade':'volei-indoor-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+
+            {'atleta':'edmilson', 'modalidade':'tenis-de-mesa-masculino-master-simples', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'futsal-masculino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'futsal-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'atletismo-masculino-master-100m', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'atletismo-masculino-master-400m', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'futebol-society-masculino-livre', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'futebol-society-masculino-master', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'basquete-masculino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'atletismo-masculino-livre-100m', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'edmilson', 'modalidade':'corrida-masculino-master-10km', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+
+            {'atleta':'elisabethe', 'modalidade':'domino-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'elisabethe', 'modalidade':'boliche-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'elisabethe', 'modalidade':'futsal-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'elisabethe', 'modalidade':'basquete-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
 
 
-            /*
-            Dominó Feminino
-Vôlei de Praia Feminino | Master
-Vôlei de Praia Feminino | Livre
-Basquete Feminino
-Vôlei Indoor Feminino
 
-            */
+
         ]
     }
 ]
