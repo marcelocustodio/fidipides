@@ -266,7 +266,7 @@ router.post('/atleta/:nome', function (req, res) {
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<form action="/atleta/' + req.body.nome + '" method="POST">' +
-    '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.body.nome + '"/>' +
     '<input type="submit" value="filtrar" /></form><br>' +
     'Participações no dia ' + req.body.diafiltro + '/08:<br> ' + participacoesNoDia + '<br>' //+
