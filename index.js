@@ -12,6 +12,33 @@ let app = express();
 const router = express.Router();
 //const app = express();
 
+
+let dia = 25
+let hora = 10
+let local = 'Palácio dos Esportes'
+let lista = []
+lista[[dia, hora, local]] = 'futebol'
+dia = 4
+hora = 7
+local = 'apcef'
+lista[[dia, hora, local]] = 'volei'
+dia = 20
+hora = 8
+local = 'se'
+lista[[dia, hora, local]] = 'xxxx'
+dia = 4
+hora = 6
+local = 'asdasdsaapcef'
+lista[[dia, hora, local]] = 'volei 2'
+
+console.log(lista[[4,7,'apcef']] === undefined)
+console.log(lista[[4,8,'apcef']] === undefined)
+
+console.log(lista)
+
+
+
+
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -106,7 +133,7 @@ router.post('/', function (req, res) {
     '<a href="atletas">Lista de Atletas e suas Participações</a><br>' +
     'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
     '<form action="/" method="POST">Selecionar o dia: ' +
-    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     'Selecionar a modalidade: ' +
     '<input type="submit">botão FILTRAR<br></input></form>' +
     'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
@@ -122,7 +149,7 @@ app.get('/', function (req, res) {
     '<a href="atletas">Lista de Atletas e suas Participações</a><br>' +
     'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
     '<form action="/" method="POST">Selecionar o dia: ' +
-    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     'Selecionar a modalidade: ' +
     '<input type="submit" value="filtrar"/></form>' +
     'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
@@ -263,7 +290,7 @@ app.get('/atleta/:nome', function (req, res) {
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<form action="/atleta/' + req.params.nome + '" method="POST">' +
-    '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option></select>' +
+    '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.params.nome + '"/>' +
     '<input type="submit" value="filtrar" /></form><br>' +
     'Participações HOJE (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
@@ -277,6 +304,16 @@ app.get('/modalidades', function (req, res) {
     lista += '<a href="/modalidade/' + element['modalidade'] + '">' + element['nome'] + '</a><br>'
   });
    res.send('Modalidades da Olimpíada 2022<br>' + lista);
+})
+
+app.get('/modalidade/:modalidade', function (req, res) {
+  let lista = []
+  banco[2]['partidas'].forEach( (element, index) => {
+    //lista += '<a href="/modalidade/' + element['modalidade'] + '">' + element['nome'] + '</a><br>'
+    lista[ [element['dia'],element['hora_inicio'],element['minuto_inicio']] ] = element['local']
+  });
+  console.log(lista)
+   res.send('Modalidade: ' + req.params.modalidade + ': ' + resgatarNomeModalidade(req.params.modalidade));
 })
 
 let port = process.env.PORT || 80
