@@ -572,8 +572,8 @@ let banco = [
             {'atleta':'lourival', 'modalidade':'futebol-society-masculino-senior', 'local':'APCEF', 'dia':24, "hora_inicio":8, "minuto_inicio":0},
             {'atleta':'lourival', 'modalidade':'futebol-society-masculino-senior', 'local':'APCEF', 'dia':25, "hora_inicio":8, "minuto_inicio":0},
 
-            {'atleta':'luciane', 'modalidade':'atletismo-feminino-livre-100m', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15}, 
-            {'atleta':'luciane', 'modalidade':'atletismo-feminino-livre-400m', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15}, 
+            {'atleta':'luciane', 'modalidade':'atletismo-feminino-livre-100m', 'local':'Rota do Sol', 'dia':23, "hora_inicio":7, "minuto_inicio":0}, 
+            {'atleta':'luciane', 'modalidade':'atletismo-feminino-livre-400m', 'local':'Rota do Sol', 'dia':23, "hora_inicio":7, "minuto_inicio":0}, 
             {'atleta':'luciane', 'modalidade':'atletismo-revezamento-misto-livre-4x100m', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15}, 
             {'atleta':'luciane', 'modalidade':'boliche-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15}, 
             {'atleta':'luciane', 'modalidade':'futsal-feminino', 'local':'Palácio dos Esportes', 'dia':25, "hora_inicio":14, "minuto_inicio":15}, 

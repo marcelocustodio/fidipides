@@ -181,8 +181,6 @@ let cabecalho = () => {
     '<input type="submit" value="filtrar"/></form>' )
 }
 
-console.log(cabecalho())
-
 app.get('/', function (req, res) {
   let competicoesHoje = resgatarCompeticoesDeHoje(hoje)
    res.send(
@@ -317,8 +315,8 @@ app.get('/atleta/:nome', function (req, res) {
     }
   });
   let modalidades = resgatarModalidadesDoAtleta(req.params.nome)
-  let participacoesHoje = resgatarParticipacoesNumDia(req.params.nome, hoje)
-  //let participacoesTotais = ''
+  let participacoesNumDia = resgatarParticipacoesNumDia(req.params.nome, hoje)
+
   res.send(
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
@@ -326,8 +324,7 @@ app.get('/atleta/:nome', function (req, res) {
     '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.params.nome + '"/>' +
     '<input type="submit" value="filtrar" /></form><br>' +
-    'Participações no dia (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
-    //'Participações TOTAIS: ' + participacoesTotais + '<br>'
+    'Participações no dia ' + hoje + '/08:<br> ' + participacoesNumDia + '<br>' 
   );
 })
 
@@ -336,26 +333,29 @@ app.get('/modalidades', function (req, res) {
   banco[1]['modalidades'].forEach( (element, index) => {
     lista += '<a href="/modalidade/' + element['modalidade'] + '">' + element['nome'] + '</a><br>'
   });
-   res.send('Modalidades da Olimpíada 2022<br>' + lista);
+   res.send('Modalidades da Olimpíada 2022<br><br>' + lista);
 })
 
 app.get('/modalidade/:modalidade', function (req, res) {
   let lista = []
   let listaDeControle = []
   banco[2]['partidas'].forEach( (element, index) => {
-    //lista += '<a href="/modalidade/' + element['modalidade'] + '">' + element['nome'] + '</a><br>'
-    // console.log('procurando ' + req.params.modalidade + ' em ' + element['modalidade'])
+    
     if (element['modalidade'] === req.params.modalidade) {
-      // console.log('entrou',element['dia'],element['hora_inicio'],element['minuto_inicio'],element['local'])
-      // lista[ [element['dia'],element['hora_inicio'],element['minuto_inicio']] ] = element['local']
-      if (!listaDeControle.includes( [element['dia'],element['hora_inicio'],element['minuto_inicio']] )) {
-        listaDeControle.push( [element['dia'],element['hora_inicio'],element['minuto_inicio']] )
+    
+        if (!listaDeControle.includes( 
+              (element['dia'], element['hora_inicio'])
+            )
+          ) {
+        listaDeControle.push( 
+          (element['dia'], element['hora_inicio'])
+        )
         lista.push( [[element['dia'],element['hora_inicio'],element['minuto_inicio']], element['local']] )
       }
     }
   });
-  console.table(lista + 'final....')
-  console.log(listaDeControle)
+  //console.table(lista + 'final....')
+  //console.log(listaDeControle)
   let listaString = ''
   lista.forEach( 
     (element, index) => {
@@ -364,7 +364,7 @@ app.get('/modalidade/:modalidade', function (req, res) {
     }
   )
    res.send(
-    'Modalidade: ' + resgatarNomeModalidade(req.params.modalidade) +
+    'Modalidade: ' + resgatarNomeModalidade(req.params.modalidade) + '<br><br>' +
     listaString
   );
 })
