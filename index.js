@@ -161,7 +161,7 @@ router.post('/', function (req, res) {
   let competicoesHoje = resgatarCompeticoesDeHoje(parseInt(req.body.diafiltro))
    res.send(
     cabecalho() +
-    'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje )
+    'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br><br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje )
   );
 })
 
