@@ -34,7 +34,7 @@ lista[[dia, hora, local]] = 'volei 2'
 console.log(lista[[4,7,'apcef']] === undefined)
 console.log(lista[[4,8,'apcef']] === undefined)
 
-console.log(lista)
+// console.log(lista)
 
 
 
@@ -341,12 +341,32 @@ app.get('/modalidades', function (req, res) {
 
 app.get('/modalidade/:modalidade', function (req, res) {
   let lista = []
+  let listaDeControle = []
   banco[2]['partidas'].forEach( (element, index) => {
     //lista += '<a href="/modalidade/' + element['modalidade'] + '">' + element['nome'] + '</a><br>'
-    lista[ [element['dia'],element['hora_inicio'],element['minuto_inicio']] ] = element['local']
+    // console.log('procurando ' + req.params.modalidade + ' em ' + element['modalidade'])
+    if (element['modalidade'] === req.params.modalidade) {
+      // console.log('entrou',element['dia'],element['hora_inicio'],element['minuto_inicio'],element['local'])
+      // lista[ [element['dia'],element['hora_inicio'],element['minuto_inicio']] ] = element['local']
+      if (!listaDeControle.includes( [element['dia'],element['hora_inicio'],element['minuto_inicio']] )) {
+        listaDeControle.push( [element['dia'],element['hora_inicio'],element['minuto_inicio']] )
+        lista.push( [[element['dia'],element['hora_inicio'],element['minuto_inicio']], element['local']] )
+      }
+    }
   });
-  console.log(lista)
-   res.send('Modalidade: ' + req.params.modalidade + ': ' + resgatarNomeModalidade(req.params.modalidade));
+  console.table(lista + 'final....')
+  console.log(listaDeControle)
+  let listaString = ''
+  lista.forEach( 
+    (element, index) => {
+      // console.log(element)
+      listaString += element[0][0] + '/08 às ' + element[0][1] + 'h' + element[0][2] + ' em ' + element[1] + '<br>'
+    }
+  )
+   res.send(
+    'Modalidade: ' + resgatarNomeModalidade(req.params.modalidade) +
+    listaString
+  );
 })
 
 let port = process.env.PORT || 80
