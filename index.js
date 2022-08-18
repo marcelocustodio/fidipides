@@ -57,13 +57,46 @@ app.use("/", router);
 
 
 
-
 const date = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"})
 let hoje = date[0] + '' + date[1]
 console.log(date)
 //hoje = 25
 console.log(hoje)
-
+const dataString = '08/' + hoje + '/2022'
+const dataAtual = new Date(dataString)
+let diaDaSemana = dataAtual.getDay()
+console.log(dataAtual)
+let diaDaSemanaString = ''
+switch(diaDaSemana) {
+  case 0: {
+    diaDaSemanaString = 'Domingo'
+    break
+  }
+  case 1: {
+    diaDaSemanaString = 'Segunda'
+    break
+  }
+  case 2: {
+    diaDaSemanaString = 'Terça'
+    break
+  }
+  case 3: {
+    diaDaSemanaString = 'Quarta'
+    break
+  }
+  case 4: {
+    diaDaSemanaString = 'Quinta'
+    break
+  }
+  case 5: {
+    diaDaSemanaString = 'Sexta'
+    break
+  }
+  case 6: {
+    diaDaSemanaString = 'Sábado'
+    break
+  }
+}
 
 
 let resgatarCompeticoesDeHoje = (dia) => {
@@ -118,7 +151,7 @@ let resgatarCompeticoesDeHoje = (dia) => {
                               atletasNasCompeticoes + '</i><br>'
       }
     )
-  } else stringCompeticoes = 'Sem competições hoje.'
+  } else stringCompeticoes = 'Sem competições no dia.'
   return stringCompeticoes
 }
 
@@ -127,31 +160,34 @@ router.post('/', function (req, res) {
   console.log(req.body.diafiltro)
   let competicoesHoje = resgatarCompeticoesDeHoje(parseInt(req.body.diafiltro))
    res.send(
-    'FIDIPIDES : Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br>' +
-    'OTC 2022<br>' +
-    'Abertura: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: *Natal Convention Center*<br>' +
-    '<a href="atletas">Lista de Atletas e suas Participações</a><br>' +
-    'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
-    '<form action="/" method="POST">Selecionar o dia: ' +
-    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
-    'Selecionar a modalidade: ' +
-    '<input type="submit">botão FILTRAR<br></input></form>' +
-    'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
+    cabecalho() +
+    'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje )
   );
 })
+
+let cabecalho = () => {
+  return (
+  '<html><head></head>' +
+  '<body>' +
+  'FIDIPIDES v. 0.3.6: Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br><br>' +
+    '<i>OTC 2022<br>' +
+    'Abertura: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: Natal Convention Center</i><br><br>' +
+    '<b>Hoje: ' + diaDaSemanaString + ', ' + hoje + '/08.</b><br><br>' +
+    '1. <a href="atletas">Lista de Atletas e suas Participações</a><br><br>' +
+    '2. <a href="modalidades">Lista de Modalidades e seus dias</a><br><br>' +
+    '3. Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a><br><br>' +
+    '<form action="/" method="POST">Selecionar o dia de competições: ' +
+    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
+    '<input type="submit" value="filtrar"/></form>' )
+}
+
+console.log(cabecalho())
 
 app.get('/', function (req, res) {
   let competicoesHoje = resgatarCompeticoesDeHoje(hoje)
    res.send(
-    'FIDIPIDES : Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br>' +
-    'OTC 2022<br>' +
-    'Abertura: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: *Natal Convention Center*<br>' +
-    '<a href="atletas">Lista de Atletas e suas Participações</a><br>' +
-    'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
-    '<form action="/" method="POST">Selecionar o dia: ' +
-    '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
-    '<input type="submit" value="filtrar"/></form>' +
-    'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
+    cabecalho() +
+    'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje )
   );
 })
 
