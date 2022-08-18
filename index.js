@@ -150,7 +150,6 @@ app.get('/', function (req, res) {
     'Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a>' +
     '<form action="/" method="POST">Selecionar o dia: ' +
     '<select id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
-    'Selecionar a modalidade: ' +
     '<input type="submit" value="filtrar"/></form>' +
     'Hoje: ' + hoje + '/08. ' + 'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições hoje.' : competicoesHoje )
   );
@@ -262,7 +261,6 @@ router.post('/atleta/:nome', function (req, res) {
   let participacoesNoDia = resgatarParticipacoesNumDia(req.params.nome, parseInt(req.body.diafiltro))
   //let participacoesTotais = ''
   res.send(
-    'Passado do POST: ' + req.body.nome + '<br>' +
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<form action="/atleta/' + req.body.nome + '" method="POST">' +
@@ -286,14 +284,13 @@ app.get('/atleta/:nome', function (req, res) {
   let participacoesHoje = resgatarParticipacoesNumDia(req.params.nome, hoje)
   //let participacoesTotais = ''
   res.send(
-    'Passado: ' + req.params.nome + '<br>' +
     'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<form action="/atleta/' + req.params.nome + '" method="POST">' +
     '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.params.nome + '"/>' +
     '<input type="submit" value="filtrar" /></form><br>' +
-    'Participações HOJE (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
+    'Participações no dia (' + hoje + '/08):<br> ' + participacoesHoje + '<br>' //+
     //'Participações TOTAIS: ' + participacoesTotais + '<br>'
   );
 })
