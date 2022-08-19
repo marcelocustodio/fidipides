@@ -148,7 +148,7 @@ let resgatarCompeticoesDeHoje = (dia) => {
         stringCompeticoes += (element['hora_inicio']<10 ? '0'+element['hora_inicio'] : element['hora_inicio']) + 'h' + 
                              (element['minuto_inicio']<10 ? '0'+element['minuto_inicio'] : element['minuto_inicio']) + ': ' + 
                              '<b>' + resgatarNomeModalidade(element['modalidade']) + '</b> (' + element['local'] + ') - <i>' +
-                              atletasNasCompeticoes + '</i><br>'
+                              atletasNasCompeticoes + '</i><br><br>'
       }
     )
   } else stringCompeticoes = 'Sem competições no dia.'
