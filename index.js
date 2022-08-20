@@ -172,7 +172,7 @@ let cabecalho = () => {
   '<style>' +
   '@media all and (max-width: 600px){' +
   '  select {' +
-  '     width: 100%; max-width: 100%;'+
+  '     width: 150px; max-width: 100%;'+
   '  }' +
   '}' +
   '</style>' +
