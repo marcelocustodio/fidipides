@@ -31,8 +31,8 @@ hora = 6
 local = 'asdasdsaapcef'
 lista[[dia, hora, local]] = 'volei 2'
 
-console.log(lista[[4,7,'apcef']] === undefined)
-console.log(lista[[4,8,'apcef']] === undefined)
+//console.log(lista[[4,7,'apcef']] === undefined)
+//console.log(lista[[4,8,'apcef']] === undefined)
 
 // console.log(lista)
 
@@ -42,13 +42,6 @@ console.log(lista[[4,8,'apcef']] === undefined)
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-/*
-router.post('/handle',(request,response) => {
-  //code to perform particular action.
-  //To access POST variable use req.body()methods.
-  console.log(request.body);
-});*/
 
 // add router in the Express app.
 app.use("/", router);
@@ -157,11 +150,12 @@ let resgatarCompeticoesDeHoje = (dia) => {
 
 
 router.post('/', function (req, res) {
-  console.log(req.body.diafiltro)
+  
   let competicoesHoje = resgatarCompeticoesDeHoje(parseInt(req.body.diafiltro))
    res.send(
     cabecalho() +
-    'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br><br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje )
+    'Competições da delegação do AM para ' + req.body.diafiltro + '/08:<br><br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje ) +
+    rodape()
   );
 })
 
@@ -169,13 +163,6 @@ let cabecalho = () => {
   return (
   '<html>'+ 
   '<head>' +
-  /*'<style>' +
-  '@media all and (max-width: 600px){' +
-  '  select {' +
-  '     width: 150px; max-width: 100%;'+
-  '  }' +
-  '}' +
-  '</style>' +*/
   '  <!-- Required meta tags -->' +
   '  <meta charset="utf-8">' +
   '  <meta name="viewport" content="width=device-width, initial-scale=1">' +
@@ -183,39 +170,57 @@ let cabecalho = () => {
   '  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">' +
   '</head>' +
   '<body>' +
-  'FIDIPIDES v. 0.3.6: Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br><br>' +
+  '<b>FIDIPIDES v. 0.3.6</b>: Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br><br>' +
     '<i>OTC 2022<br>' +
     'Abertura: segunda 22/08<br>Encerramento: sábado 27/08<br>Local: Natal Convention Center</i><br><br>' +
     '<b>Hoje: ' + diaDaSemanaString + ', ' + hoje + '/08.</b><br><br>' +
     '1. <a href="atletas">Lista de Atletas e suas Participações</a><br><br>' +
-    '2. <a href="modalidades">Lista de Modalidades e seus dias</a><br><br>' +
-    '3. Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3">todos os locais de competições</a><br><br>' +
+    // '2. <a href="modalidades">Lista de Modalidades e seus dias</a><br><br>' +
+    '2. Google Maps de <a href="https://www.google.com.br/maps/@-5.8538982,-35.1966465,12z/data=!4m3!11m2!2sFwo1MEK7Evd-YFep7Cvnqq_yVFBHKA!3e3" target="_blank">todos os locais de competições</a><br><br>' +
     '<form action="/" method="POST">Selecionar o dia de competições: ' +
     '<select class="form-select" id="diafiltro" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
-    '<input type="submit" value="filtrar"/></form>' )
+    '<input type="submit" class="btn btn-success" value="filtrar"/></form>' )
+}
+
+let rodape = () => {
+  return('<br><br>criado por Marcelo Monteiro Custódio em NodeJS + Bootstrap')
+}
+
+let cabecalhoInterno = () => {
+  return (
+    '<html>'+ 
+  '<head>' +
+  '  <!-- Required meta tags -->' +
+  '  <meta charset="utf-8">' +
+  '  <meta name="viewport" content="width=device-width, initial-scale=1">' +
+  '  <!-- Bootstrap CSS -->' +
+  '  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">' +
+  '</head>' +
+  '<body>' 
+  )
 }
 
 app.get('/', function (req, res) {
   let competicoesHoje = resgatarCompeticoesDeHoje(hoje)
    res.send(
     cabecalho() +
-    'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje )
+    'Competições da delegação do AM para ' + hoje + '/08:<br>' + ( competicoesHoje == '' ? 'Não há competições no dia.' : competicoesHoje ) +
+    rodape()
   );
 })
 
 app.get('/atletas', function (req, res) {
   var lista = ''
   banco[0]['atletas'].forEach( (element, index) => {
-    lista += '<a href="/atleta/' + element['nome'] + '">' + element['nome_completo'] + '</a><br>'
+    lista += '<a href="/atleta/' + element['nome'] + '" >' + element['nome_completo'] + '</a><br>'
   });
-   res.send('Lista de Atletas<br>' + lista);
+   res.send(cabecalhoInterno() + '<a href="/" class="btn btn-primary" >VOLTAR À PÁGINA INICIAL</a><br><br>Lista de Atletas<br><br>' + lista + rodape());
 })
 
 let resgatarNomeModalidade = (id) => {
   let chave = 0
   banco[1]['modalidades'].forEach( (element, index) => {
     if (element['modalidade'] === id) {
-      // console.log('Nome completo do cidadão: ' + element['nome_completo'])
       chave = index
     }
   });
@@ -225,8 +230,6 @@ let resgatarNomeModalidade = (id) => {
 
 let resgatarModalidadesDoAtleta = (id) => {
 
-  
-  console.log(id)
   var arrayModalidades = []
   banco[2]['partidas'].forEach( (element, index) => {
     
@@ -295,9 +298,7 @@ let resgatarParticipacoesNumDia = (id, dia) => {
 }
 
 router.post('/atleta/:nome', function (req, res) {
-  console.log(req.body.diafiltro)
-  console.log(req.body.nome)
-
+  
   var chave = 9
   banco[0]['atletas'].forEach( (element, index) => {
     if (element['nome'] === req.params.nome) {
@@ -307,15 +308,19 @@ router.post('/atleta/:nome', function (req, res) {
   });
   let modalidades = resgatarModalidadesDoAtleta(req.params.nome)
   let participacoesNoDia = resgatarParticipacoesNumDia(req.params.nome, parseInt(req.body.diafiltro))
-  //let participacoesTotais = ''
+  
   res.send(
-    'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
+    cabecalhoInterno() +
+    '<a href="/" class="btn btn-primary" role="button">VOLTAR À PÁGINA INICIAL</a><br><br>' +
+    '<a href="/atletas">voltar à lista de atletas</a><br><br>' +
+    '<h5>' + banco[0]['atletas'][chave]['nome_completo'] + '</h5><br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<form action="/atleta/' + req.body.nome + '" method="POST">' +
     '<select class="form-select" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.body.nome + '"/>' +
-    '<input type="submit" value="filtrar" /></form><br><br>' +
-    'Participações no dia ' + req.body.diafiltro + '/08:<br> ' + participacoesNoDia + '<br><br>'
+    '<input type="submit" class="btn btn-success" value="filtrar" /></form><br><br>' +
+    'Participações no dia ' + req.body.diafiltro + '/08:<br><br> ' + participacoesNoDia + '<br>' +
+    rodape()
   );
 })
 
@@ -331,13 +336,17 @@ app.get('/atleta/:nome', function (req, res) {
   let participacoesNumDia = resgatarParticipacoesNumDia(req.params.nome, hoje)
 
   res.send(
-    'Atleta: ' + banco[0]['atletas'][chave]['nome_completo'] + '<br><br>' +
+    cabecalhoInterno() +
+    '<a href="/" class="btn btn-primary" role="button">VOLTAR À PÁGINA INICIAL</a><br><br>' +
+    '<a href="/atletas">voltar à lista de atletas</a><br><br>' +
+    '<h5>' + banco[0]['atletas'][chave]['nome_completo'] + '</h5><br><br>' +
     'Modalidades:<br>' + modalidades + '<br><br>' +
     'Selecionar dia<form action="/atleta/' + req.params.nome + '" method="POST">' +
     '<select class="form-select" name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.params.nome + '"/>' +
-    '<input type="submit" value="filtrar" /></form><br><br>' +
-    'Participações no dia ' + hoje + '/08:<br><br>' + participacoesNumDia + '<br>' 
+    '<input type="submit" class="btn btn-success" value="filtrar" /></form><br><br>' +
+    'Participações no dia ' + hoje + '/08:<br><br>' + participacoesNumDia + '<br>' +
+    rodape()
   );
 })
 
@@ -367,12 +376,10 @@ app.get('/modalidade/:modalidade', function (req, res) {
       }
     }
   });
-  //console.table(lista + 'final....')
-  //console.log(listaDeControle)
+  
   let listaString = ''
   lista.forEach( 
     (element, index) => {
-      // console.log(element)
       listaString += element[0][0] + '/08 às ' + element[0][1] + 'h' + element[0][2] + ' em ' + element[1] + '<br>'
     }
   )
