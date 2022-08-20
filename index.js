@@ -300,9 +300,8 @@ router.post('/atleta/:nome', function (req, res) {
     'Selecionar dia<form action="/atleta/' + req.body.nome + '" method="POST">' +
     '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.body.nome + '"/>' +
-    '<input type="submit" value="filtrar" /></form><br>' +
-    'Participações no dia ' + req.body.diafiltro + '/08:<br> ' + participacoesNoDia + '<br>' //+
-    //'Participações TOTAIS: ' + participacoesTotais + '<br>'
+    '<input type="submit" value="filtrar" /></form><br><br>' +
+    'Participações no dia ' + req.body.diafiltro + '/08:<br> ' + participacoesNoDia + '<br><br>'
   );
 })
 
@@ -323,8 +322,8 @@ app.get('/atleta/:nome', function (req, res) {
     'Selecionar dia<form action="/atleta/' + req.params.nome + '" method="POST">' +
     '<select name="diafiltro"><option value="23">23/08</option><option value="24">24/08</option><option value="25">25/08</option><option value="26">26/08</option></select>' +
     '<input type="hidden" name="nome" value="' + req.params.nome + '"/>' +
-    '<input type="submit" value="filtrar" /></form><br>' +
-    'Participações no dia ' + hoje + '/08:<br> ' + participacoesNumDia + '<br>' 
+    '<input type="submit" value="filtrar" /></form><br><br>' +
+    'Participações no dia ' + hoje + '/08:<br><br>' + participacoesNumDia + '<br>' 
   );
 })
 
