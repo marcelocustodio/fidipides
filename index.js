@@ -169,13 +169,13 @@ let cabecalho = () => {
   return (
   '<html>'+ 
   '<head>' +
-  '<style>' +
+  /*'<style>' +
   '@media all and (max-width: 600px){' +
   '  select {' +
   '     width: 150px; max-width: 100%;'+
   '  }' +
   '}' +
-  '</style>' +
+  '</style>' +*/
   '</head>' +
   '<body>' +
   'FIDIPIDES v. 0.3.6: Sistema de Gerenciamento dos Atletas do TCE-AM em Competições<br><br>' +
