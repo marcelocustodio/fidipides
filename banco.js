@@ -953,7 +953,7 @@ let banco = [
             {'atleta':'simone', 'modalidade':'tenis-de-mesa-feminino-livre-dupla', 'local':'Praiamar Natal Hotel & Convention', 'dia':26, "hora_inicio":18, "minuto_inicio":15},
             {'atleta':'simone', 'modalidade':'beach-tennis-feminino-master-simples', 'local':'Aeroclube', 'dia':25, "hora_inicio":9, "minuto_inicio":30},
             {'atleta':'simone', 'modalidade':'beach-tennis-feminino-master-dupla', 'local':'Aeroclube', 'dia':24, "hora_inicio":10, "minuto_inicio":0},
-            {'atleta':'simone', 'modalidade':'beach-tennis-feminino-livre-dupla', 'local':'Aeroclube', 'dia':25, "hora_inicio":14, "minuto_inicio":15},
+            {'atleta':'simone', 'modalidade':'beach-tennis-feminino-livre-dupla', 'local':'Aeroclube', 'dia':23, "hora_inicio":7, "minuto_inicio":0},
             {'atleta':'simone', 'modalidade':'tenis-de-mesa-feminino-master-dupla', 'local':'Praiamar Natal Hotel & Convention', 'dia':26, "hora_inicio":18, "minuto_inicio":0},
             {'atleta':'simone', 'modalidade':'volei-de-praia-feminino-master', 'local':'Aeroclube', 'dia':24, "hora_inicio":8, "minuto_inicio":30},
             {'atleta':'simone', 'modalidade':'volei-indoor-feminino', 'local':'Palácio dos Esportes', 'dia':24, "hora_inicio":14, "minuto_inicio":15},
